@@ -1,0 +1,50 @@
+<div class="container">
+
+    <!-- Page Heading -->
+    <h1 class="my-4">Lista de Tarjetas</h1>
+    <div *ngFor="let card of cardList; index as i" class="card">
+        <div class="card-body">
+            <h4 class="card-title">
+                <a>Pan</a>
+            </h4>
+            <p class="card-text">{{card.maskedPan}} </p>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a>Titular</a>
+            </h4>
+            <p class="card-text">{{card.holder}}</p>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a>cédula</a>
+            </h4>
+            <p class="card-text">{{card.id}} </p>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a>Teléfono</a>
+            </h4>
+            <p class="card-text">{{card.phone}}</p>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a>Estado</a>
+            </h4>
+            <p class="card-text">{{card.state}} </p>
+        </div>
+        <div>
+            <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="button"
+                    (click)="activateCard(i)">Activar Tarjeta</button>
+            </div>
+            <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="button"
+                    (click)="deleteCard(i)">Eliminar Tarjeta</button>
+            </div>
+            <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="button"
+                    (click)="goToTransactionById(i)">Ver transacciones</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,45 @@
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+            <div class="card-img-left d-none d-md-flex">
+              <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Credibanco App</h5>
+              <form [formGroup]="createTransactionForm" (ngSubmit)="createTransaction(createTransactionForm.value)">
+  
+                <div class="form-floating mb-3">
+                  <input formControlName="hashId" type="text" class="form-control" id="floatingInputHashId" placeholder="HashId" required autofocus>
+                  <label for="floatingInputHashId">HashId</label>
+                </div>
+  
+                <div class="form-floating mb-3">
+                  <input formControlName="referenceNumber" type="text" class="form-control" id="floatingInputReferenceNumber" placeholder="ReferenceNumber" required autofocus>
+                  <label for="floatingReferenceNumber">Número de referencia</label>
+                </div>
+  
+                <hr>
+  
+                <div class="form-floating mb-3">
+                  <input formControlName="totalPurchase" type="text" class="form-control" id="floatingTotalPurchase" placeholder="TotalPurchase">
+                  <label for="floatingTotalPurchase">Total Compra</label>
+                </div>
+  
+                <div class="form-floating mb-3">
+                  <input formControlName="addressPurchase" type="text" class="form-control" id="floatingAddressPurchase" placeholder="AddressPurchase">
+                  <label for="floatingAddressPurchase">Dirección de compra</label>
+                </div>
+  
+                <div class="d-grid mb-2">
+                  <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit" [disabled]="createTransactionForm.invalid">Crear Transacción</button>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

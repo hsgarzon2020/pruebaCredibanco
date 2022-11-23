@@ -1,0 +1,49 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Credibanco App</h5>
+            <form [formGroup]="createCardForm" (ngSubmit)="createCard(createCardForm.value)">
+
+              <div class="form-floating mb-3">
+                <input formControlName="pan"  type="number" class="form-control" id="floatingInputPan" placeholder="pan" required autofocus>
+                <label for="floatingInputPan">Pan</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input formControlName="holder" type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                <label for="floatingInputUsername">Titular</label>
+              </div>
+
+              <hr>
+
+              <div class="form-floating mb-3">
+                <input formControlName="id" type="number" class="form-control" id="floatingId" placeholder="Id" required autofocus>
+                <label for="floatingId">Cedula</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input formControlName="cardType" type="text" class="form-control" id="floatingType" placeholder="Type" required autofocus>
+                <label for="floatingType">Tipo Tarjeta</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input formControlName="phone" type="tel" class="form-control" id="floatingTelephone" placeholder="Telephone" required autofocus>
+                <label for="floatingTelephone">Teléfono</label>
+              </div>
+
+              <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit" [disabled]="createCardForm.invalid" (click) = "toListCards()">Crear Tarjeta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
